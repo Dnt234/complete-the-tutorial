@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxmvbsdr4v7tv"]
+
+[ext_resource type="Script" path="res://Scenes/background.gd" id="1_v1jmc"]
+[ext_resource type="Texture2D" uid="uid://d0lb0hkyuk7xc" path="res://Assets/Skybox Castle outside.png" id="2_472qy"]
+[ext_resource type="PackedScene" uid="uid://vfmx4f4cam72" path="res://Scenes/player.tscn" id="3_nt1t5"]
+[ext_resource type="PackedScene" uid="uid://bvmfxcdjgf17y" path="res://Scenes/skull_head.tscn" id="4_402kn"]
+[ext_resource type="Script" path="res://Scenes/end_of_level.gd" id="5_egf0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltoqi"]
+size = Vector2(490.934, 69.7775)
+
+[node name="World" type="Node2D"]
+
+[node name="background" type="Node2D" parent="."]
+script = ExtResource("1_v1jmc")
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+offset_right = 4357.0
+offset_bottom = 240.0
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_472qy")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_nt1t5")]
+position = Vector2(61, 163)
+speed = 300
+
+[node name="Node" type="Node" parent="."]
+
+[node name="SkullHead12" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1265, 140)
+
+[node name="SkullHead7" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(379, 125)
+
+[node name="SkullHead6" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(474, 208)
+
+[node name="SkullHead5" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(561, 141)
+
+[node name="SkullHead4" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(637, 63)
+
+[node name="SkullHead3" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(749, 131)
+
+[node name="SkullHead22" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1978, 151)
+
+[node name="SkullHead21" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1938, 63)
+
+[node name="SkullHead20" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1864, 139)
+
+[node name="SkullHead19" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1807, 232)
+
+[node name="SkullHead18" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1745, 165)
+
+[node name="SkullHead17" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1670, 81)
+
+[node name="SkullHead16" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1587, 159)
+
+[node name="SkullHead15" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1510, 220)
+
+[node name="SkullHead14" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1420, 139)
+
+[node name="SkullHead13" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1343, 64)
+
+[node name="SkullHead11" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1166, 220)
+
+[node name="SkullHead10" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1083, 146)
+
+[node name="SkullHead9" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(1009, 70)
+
+[node name="SkullHead8" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(903, 143)
+
+[node name="SkullHead2" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(820, 203)
+
+[node name="SkullHead" parent="Node" groups=["Enemy"] instance=ExtResource("4_402kn")]
+position = Vector2(321, 57)
+
+[node name="EndOfLevel" type="Area2D" parent="." groups=["player"]]
+script = ExtResource("5_egf0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel"]
+position = Vector2(3117, 73.4999)
+rotation = -3.14159
+scale = Vector2(0.334057, -7.89653)
+shape = SubResource("RectangleShape2D_ltoqi")
+
+[connection signal="area_entered" from="EndOfLevel" to="background" method="_on_end_of_level_area_entered"]

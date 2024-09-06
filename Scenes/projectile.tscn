@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://hc3iuycg75s4"]
+
+[ext_resource type="Texture2D" uid="uid://c1u1c6yb4dj40" path="res://Assets/Player projectiles.png" id="1_h4jgr"]
+[ext_resource type="Script" path="res://Scenes/projectile.gd" id="1_xoe63"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqsqk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50djb"]
+atlas = ExtResource("1_h4jgr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5e760"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50djb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bat" type="Area2D" groups=["Projectile"]]
+script = ExtResource("1_xoe63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kqsqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_5e760")

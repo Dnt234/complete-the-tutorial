@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://yf47adexwdlt"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_e2ibd"]
+[ext_resource type="Texture2D" uid="uid://hr6r3lfm33wn" path="res://title.png" id="2_c87lj"]
+[ext_resource type="Texture2D" uid="uid://d0lb0hkyuk7xc" path="res://Assets/Skybox Castle outside.png" id="3_xuoyq"]
+
+[sub_resource type="FontFile" id="FontFile_mb3wg"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2ibd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = -1.0
+offset_right = 649.0
+offset_bottom = 178.0
+texture = ExtResource("2_c87lj")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 284.0
+offset_top = 149.0
+offset_right = 380.0
+offset_bottom = 192.0
+
+[node name="start" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_mb3wg")
+text = "Start Game"
+
+[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+text = "Quit Game"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 645.0
+offset_bottom = 319.0
+texture = ExtResource("3_xuoyq")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

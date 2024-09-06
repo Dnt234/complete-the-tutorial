@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://2anxc7xt42fp"]
+
+[ext_resource type="Script" path="res://Scenes/background.gd" id="1_5nf3c"]
+[ext_resource type="Texture2D" uid="uid://dqmpbv6rhp7gf" path="res://Assets/Skybox Pyramid outside.png" id="2_ap3m5"]
+[ext_resource type="PackedScene" uid="uid://vfmx4f4cam72" path="res://Scenes/player.tscn" id="3_suacg"]
+[ext_resource type="PackedScene" uid="uid://bvmfxcdjgf17y" path="res://Scenes/skull_head.tscn" id="4_ppk3l"]
+
+[node name="World" type="Node2D"]
+
+[node name="background" type="Node2D" parent="."]
+script = ExtResource("1_5nf3c")
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+offset_right = 4357.0
+offset_bottom = 240.0
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_ap3m5")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_suacg")]
+position = Vector2(61, 163)
+speed = 300
+
+[node name="Node" type="Node" parent="."]
+
+[node name="SkullHead12" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1265, 140)
+
+[node name="SkullHead7" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(379, 125)
+
+[node name="SkullHead6" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(474, 208)
+
+[node name="SkullHead5" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(561, 141)
+
+[node name="SkullHead4" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(637, 63)
+
+[node name="SkullHead3" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(749, 131)
+
+[node name="SkullHead22" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1978, 151)
+
+[node name="SkullHead21" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1938, 63)
+
+[node name="SkullHead20" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1864, 139)
+
+[node name="SkullHead19" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1807, 232)
+
+[node name="SkullHead18" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1745, 165)
+
+[node name="SkullHead17" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1670, 81)
+
+[node name="SkullHead16" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1587, 159)
+
+[node name="SkullHead15" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1510, 220)
+
+[node name="SkullHead14" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1420, 139)
+
+[node name="SkullHead13" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1343, 64)
+
+[node name="SkullHead11" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1166, 220)
+
+[node name="SkullHead10" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1083, 146)
+
+[node name="SkullHead9" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(1009, 70)
+
+[node name="SkullHead8" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(903, 143)
+
+[node name="SkullHead2" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(820, 203)
+
+[node name="SkullHead" parent="Node" groups=["Enemy"] instance=ExtResource("4_ppk3l")]
+position = Vector2(321, 57)
